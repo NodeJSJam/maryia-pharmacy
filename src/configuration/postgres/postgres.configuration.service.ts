@@ -14,7 +14,7 @@ export class PostgresConfigService {
   }
 
   get database(): string {
-    return this.configService.get('postgres.user') || '';
+    return this.configService.get('postgres.database') || '';
   }
 
   get host(): string {

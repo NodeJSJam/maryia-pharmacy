@@ -3,6 +3,8 @@ import { DrugModule } from './modules/drugs/drugs.module';
 import { GlobalConfigurationModule } from './configuration/configuration.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostgresConfigService } from './configuration/postgres/postgres.configuration.service';
+import { PharmacyModule } from './modules/pharmacies/pharmacies.module';
+import { DrugPharmacyModule } from './modules/drugs_pharmacies/drugs_pharmacies.module';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { PostgresConfigService } from './configuration/postgres/postgres.configu
       inject: [PostgresConfigService],
     }), 
     DrugModule,
+    PharmacyModule,
+    DrugPharmacyModule,
     GlobalConfigurationModule,
   ],
   controllers: [],
